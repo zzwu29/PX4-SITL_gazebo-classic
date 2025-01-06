@@ -1,4 +1,5 @@
 <?xml version='1.0'?>
+<!-- https://github.com/ctu-mrs/Mid360_simulation_plugin/blob/refactoring/livox_laser_simulation/models/sensors_only/model.sdf -->
 <sdf version="1.6">
   <model name="mid360">
     <!-- add lidars -->
@@ -29,7 +30,9 @@
       </visual>
 
       <sensor type="ray" name="laser_livox">
-        <pose>0 0 0 0 0 0</pose>
+        <!-- DO NOT set z to 0 -->
+        <!-- related to blocked -->
+        <pose>0 0 0.05 0 0 0</pose>
         <visualize>false</visualize>
         <always_on>true</always_on>
         <update_rate>10</update_rate>
@@ -61,10 +64,14 @@
               <stddev>0.0</stddev>
             </noise>
           </ray>
-          <visualize>true</visualize>
+          <visualize>false</visualize>
           <samples>20000</samples>
           <downsample>1</downsample>
           <csv_file_name>mid360-real-centr.csv</csv_file_name>
+          
+          <!-- defined in livox_points_plugin.h -->
+          <!-- SENSOR_MSG_POINT_CLOUD = 0, SENSOR_MSG_POINT_CLOUD2_POINTXYZ = 1,  -->
+          <!-- SENSOR_MSG_POINT_CLOUD2_LIVOXPOINTXYZRTLT = 2, livox_laser_simulation_CUSTOM_MSG = 3, -->
           <publish_pointcloud_type>3</publish_pointcloud_type>
           <ros_topic>/livox/lidar</ros_topic>
           <frameName>livox_frame</frameName>

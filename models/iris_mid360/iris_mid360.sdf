@@ -6,6 +6,8 @@
       <uri>model://iris</uri>
     </include>
 
+    <!-- imu, /imu, sensor_msgs/Imu in imu_frame -->
+    <!-- about 200 Hz -->
     <include>
       <uri>model://imu</uri>
       <pose>0 0 0.06 0 0 0</pose>
@@ -22,6 +24,8 @@
       </axis>
     </joint>
 
+    <!-- livox mid360, /livox/lidar, livox_laser_simulation/CustomMsg in livox_frame -->
+    <!-- about 10 Hz -->
     <include>
       <uri>model://mid360</uri>
       <pose>0 0 0.06 0 0 0</pose>

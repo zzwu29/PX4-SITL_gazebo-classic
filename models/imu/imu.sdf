@@ -18,15 +18,15 @@
       <parent>link</parent>
       <update_rate>500</update_rate>
       <visualize>true</visualize>
-      <topic>/livox/imu</topic>
+      <topic>/imu</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>/livox/imu</topicName>
+        <topicName>/imu</topicName>
         <bodyName>imu</bodyName>
         <updateRateHZ>500.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
-        <frameName>livox_frame</frameName>
+        <frameName>imu_frame</frameName>
 
         <gyroscopeNoiseDensity>0.0006</gyroscopeNoiseDensity>
         <gyroscopeRandomWalk>0.000003</gyroscopeRandomWalk>        
