@@ -26,7 +26,7 @@
         <gaussianNoise>0.0</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
-        <frameName>imu</frameName>
+        <frameName>livox_frame</frameName>
 
         <gyroscopeNoiseDensity>0.0006</gyroscopeNoiseDensity>
         <gyroscopeRandomWalk>0.000003</gyroscopeRandomWalk>        

@@ -3,16 +3,13 @@
   <model name="mid360">
     <!-- add lidars -->
     <link name="link">
-      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <mass>0.1</mass>
+        <mass>0.001</mass>
         <inertia>
-          <ixx>0.0001</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0001</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0001</izz>
+          <ixx>0.000000166667</ixx>
+          <iyy>0.000000166667</iyy>
+          <izz>0.000000166667</izz>
         </inertia>
       </inertial>
       <collision name="lidar_collision">
@@ -23,6 +20,7 @@
         </geometry>
       </collision>
       <visual name="lidar_visual">
+        <pose>0 0 0 0 0 3.1415926535897931</pose>
         <geometry>
           <mesh>
             <uri>model://mid360/meshes/mid360.dae</uri>
@@ -31,7 +29,7 @@
       </visual>
 
       <sensor type="ray" name="laser_livox">
-        <pose>0 0 0.05 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <visualize>false</visualize>
         <always_on>true</always_on>
         <update_rate>10</update_rate>
@@ -69,7 +67,7 @@
           <csv_file_name>mid360-real-centr.csv</csv_file_name>
           <publish_pointcloud_type>3</publish_pointcloud_type>
           <ros_topic>/livox/lidar</ros_topic>
-          <frameName>livox</frameName>
+          <frameName>livox_frame</frameName>
         </plugin>
       </sensor>
     </link>
