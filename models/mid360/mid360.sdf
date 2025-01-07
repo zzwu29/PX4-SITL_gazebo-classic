@@ -16,15 +16,18 @@
       <collision name="lidar_collision">
         <geometry>
           <mesh>
-            <uri>model://mid360/meshes/mid360_rules.dae</uri>
+            <!-- <uri>model://mid360/meshes/mid360_rules.dae</uri> -->
+            <uri>model://mid360/meshes/mid-360-asm.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="lidar_visual">
-        <pose>0 0 0 0 0 3.1415926535897931</pose>
+        <!-- <pose>0 0 0 0 0 3.1415926535897931</pose> -->
+        <pose>0 0 0 1.57 0 3.1415926535897931</pose>
         <geometry>
           <mesh>
-            <uri>model://mid360/meshes/mid360.dae</uri>
+            <!-- <uri>model://mid360/meshes/mid360.dae</uri> -->
+            <uri>model://mid360/meshes/mid-360-asm.dae</uri>
           </mesh>
         </geometry>
       </visual>
