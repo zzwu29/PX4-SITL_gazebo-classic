@@ -16,12 +16,15 @@
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
       <parent>link</parent>
-      <update_rate>500</update_rate>
+      <!-- This is the real sample rate as "rostopic hz /imu" -->
+      <update_rate>200</update_rate>
       <visualize>true</visualize>
       <topic>/imu</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
         <topicName>/imu</topicName>
         <bodyName>imu</bodyName>
+        <!-- This is important too, if update_rate is 200 and set here updateRateHZ to 200, the final rate would be 100 -->
+        <!-- Hence, just set is higher -->
         <updateRateHZ>500.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
